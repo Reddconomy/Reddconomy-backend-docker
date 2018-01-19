@@ -1,18 +1,13 @@
 #!/bin/bash
-PREVIOUS_VERSION="`curl https://ci_deploy.frk.wf/Reddconomy_latest.txt`"
+PREVIOUS_VERSION="`curl https://dl.bintray.com/reddconomy/Reddconomy/Reddconomy_latest.txt`"
 while true;
 do
-    NEW_VERSION="`curl https://ci_deploy.frk.wf/Reddconomy_latest.txt`"
+    NEW_VERSION="`curl https://dl.bintray.com/reddconomy/Reddconomy/Reddconomy_latest.txt`"
     if [ "$PREVIOUS_VERSION" != "$NEW_VERSION" ];
     then
         echo "Restart & update"
         PREVIOUS_VERSION=$NEW_VERSION
-        supervisorctl stop reddconomy
-
-        #HOTFIX : force kill
-        #kill `jps|xargs`
-
-        supervisorctl start reddconomy
+        supervisorctl restart reddconomy
     fi
     sleep 60
 done

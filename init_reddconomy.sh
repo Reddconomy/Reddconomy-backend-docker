@@ -1,9 +1,10 @@
 #!/bin/bash
+
+echo "Starting...."
 cd /opt/reddconomy
 
-VERSION="`curl https://ci_deploy.frk.wf/Reddconomy_latest.txt`" 
-PASSWORD="N2lMuG106fRM4yJRcQyozzUnzF13tJid" 
-curl https://ci_deploy.frk.wf/Reddconomy.jar-$VERSION.aes256 | openssl aes-256-cbc  -md sha256 -d -out Reddconomy.jar -k $PASSWORD 
+VERSION="`curl https://dl.bintray.com/reddconomy/Reddconomy/Reddconomy_latest.txt`"
+curl  https://dl.bintray.com/reddconomy/Reddconomy/Reddconomy-$VERSION.jar -o Reddconomy.jar
 
 if [ ! -f /data/reddconomy.json ];
 then
