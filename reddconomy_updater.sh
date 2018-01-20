@@ -37,7 +37,7 @@ function checkForReddconomyUpdate {
     new_version="`getReddconomyVersion`"
     if [ "$REDDCONOMY_VERSION" != "$new_version" ];
     then
-        echo "Restart & update"
+        echo "New version available. Old:$REDDCONOMY_VERSION, new $new_version"
         export REDDCONOMY_VERSION=$new_version
         echo "true"
     fi

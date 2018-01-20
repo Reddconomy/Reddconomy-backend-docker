@@ -2,10 +2,10 @@
 source /reddconomy_updater.sh
 while true;
 do
-    if [ "`checkForReddconomyUpdate`" != "false" ];
+    if [ "`checkForReddconomyUpdate`" == "true" ];
     then
         echo "Restart & update"
         supervisorctl restart reddconomy
     fi
-    sleep 60
+    sleep 2m
 done
