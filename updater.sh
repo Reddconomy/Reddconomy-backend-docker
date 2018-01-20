@@ -1,12 +1,10 @@
 #!/bin/bash
-PREVIOUS_VERSION="`curl https://dl.bintray.com/reddconomy/Reddconomy/Reddconomy_latest.txt`"
+source /reddconomy_updater.sh
 while true;
 do
-    NEW_VERSION="`curl https://dl.bintray.com/reddconomy/Reddconomy/Reddconomy_latest.txt`"
-    if [ "$PREVIOUS_VERSION" != "$NEW_VERSION" ];
+    if [ "`checkForReddconomyUpdate`" != "false" ];
     then
         echo "Restart & update"
-        PREVIOUS_VERSION=$NEW_VERSION
         supervisorctl restart reddconomy
     fi
     sleep 60
