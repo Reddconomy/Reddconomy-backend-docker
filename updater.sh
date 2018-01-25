@@ -2,7 +2,7 @@
 source /reddconomy_updater.sh
 while true;
 do
-    if [ "`checkForReddconomyUpdate`" == "true" ];
+    if [ "`checkForReddconomyUpdate`" = "true" ];
     then
         echo "Restart & update"
         supervisorctl restart reddconomy
