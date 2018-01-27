@@ -8,7 +8,7 @@ downloadReddconomy Reddconomy.jar
 
 if [ ! -f /data/reddconomy.json ];
 then
-    echo '{"bind_ip":"0.0.0.0",  "sqlite-path": "/data/db2.sqlite", "coin":"dogecoin", "coin_short":"doge"}' > /data/reddconomy.json
+    echo "{\"bind_ip\":\"0.0.0.0\", \"sqlite-path\": \"/data/db2.sqlite\", \"coin\":\"$COIN\", \"coin_short\":\"$COIN_SHORT\"}" > /data/reddconomy.json
 fi
 
 /opt/java/bin/java -jar Reddconomy.jar /data/reddconomy.json
