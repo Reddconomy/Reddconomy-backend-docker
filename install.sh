@@ -1,7 +1,7 @@
 #!/bin/bash
 ls /opt
 set -e
-chmod +x /init_testnet.sh 
+chmod +x /init_daemon.sh 
 chmod +x /init_reddconomy.sh 
 chmod +x /reddconomy_updater.sh 
 chmod +x /updater.sh 

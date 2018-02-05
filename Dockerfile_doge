@@ -3,7 +3,7 @@ FROM riccardoblb/dogecoin:amd64
 ENV COIN_SHORT="doge"
 ENV COIN="dogecoin"
 
-ADD init_testnet.sh /init_testnet.sh
+ADD init_daemon.sh /init_daemon.sh
 ADD init_reddconomy.sh /init_reddconomy.sh
 ADD updater.sh /updater.sh
 ADD reddconomy_updater.sh /reddconomy_updater.sh
